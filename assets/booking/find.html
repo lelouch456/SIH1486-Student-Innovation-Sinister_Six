@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Google Sheets Data</title>
+    <script src="https://apis.google.com/js/api.js"></script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cab Booking<a href="../../index.html">Home</a></title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f0f0f0;
+        }
+        .container {
+            max-width: 600px;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: #fff;
+            border-radius: 5px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        h1 {
+            text-align: center;
+        }
+        .form-group {
+            margin-bottom: 20px;
+        }
+        label {
+            display: block;
+            margin-bottom: 5px;
+        }
+        input[type="text"] {
+            width: 100%;
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 3px;
+        }
+        button {
+            display: block;
+            width: 100%;
+            padding: 10px;
+            background-color: #007bff;
+            color: #fff;
+            border: none;
+            border-radius: 3px;
+            cursor: pointer;
+        }
+        .driver-list {
+            margin-top: 20px;
+        }
+        .driver {
+            border: 1px solid #ccc;
+            border-radius: 3px;
+            padding: 10px;
+            margin-bottom: 10px;
+        }
+        .driver h3 {
+            margin: 0;
+        }
+        .driver p {
+            margin: 0;
+        }
+    </style>
+</head>
+<body>
+    
+    <div class="container">
+        <h1>Cab Booking</h1>
+        <div class="form-group">
+            <label for="source">Source:</label>
+            <input type="text" id="source" placeholder="Enter source location">
+        </div>
+        <div class="form-group">
+            <label for="destination">Destination:</label>
+            <input type="text" id="destination" placeholder="Enter destination location">
+        </div>
+        <button id="findDrivers">Find Drivers</button>
+        <div class="driver-list" id="driverList">
+            <!-- Driver information will be displayed here -->
+        </div>
+    </div>
+
+    <!-- Include JavaScript for functionality -->
+    <script>
+        document.getElementById("findDrivers").addEventListener("click", function () {
+            // In a real implementation, you would send a request to the backend
+            // to fetch and display driver information based on the source and destination.
+            // For this example, we'll just simulate some driver data.
+            var driverList = document.getElementById("driverList");
+            driverList.innerHTML = "";
+            var drivers = [
+                { name: "Driver 1", rating: 4.8 },
+                { name: "Driver 2", rating: 4.5 },
+                { name: "Driver 3", rating: 4.9 },
+            ];
+            drivers.forEach(function (driver) {
+                var driverElement = document.createElement("div");
+                driverElement.classList.add("driver");
+                driverElement.innerHTML = "<h3>" + driver.name + "</h3><p>Rating: " + driver.rating + "</p>";
+                driverList.appendChild(driverElement);
+            });
+        });
+    </script>
+    <script src="script1.js"></script>
+    <a style="font-family:Verdana, Geneva, Tahoma, sans-serif;font-size: larger;" href="../../index.html">Home</a>
+</body>
+</html>
